@@ -31,17 +31,9 @@ makes it easier to communinicate information.
 
 # Hardware Technology Used
 I have chosen the Nvidia Jetson Nano for this demonstration for 3 reasons:
-    1. The Jetson Nano, like the Raspberry Pi is ARM64 based and many companies
-       are switch to ARM based systems for embedded applications and even 
-       scaling up to high performance computing.
-    2. The Jetson Nano is different enough from a Raspberry Pi to give students 
-       exposure to other embedded systems, but similar enough that existing 
-       knowledge on the Raspberry Pi system can be transfered over. Additionally 
-       both systems run a version of linux (Jetson Nano runs Ubuntu and the 
-       Raspberry Pi can run Ubuntu or Raspian) and any learned linux knowledge 
-       can be transfered over as well.
-    3. The Jetson Nano is targeted as an embedded AI, computer vision, and high 
-       performance computing platform. 
+    1. The Jetson Nano, like the Raspberry Pi is ARM64 based and many companies are switch to ARM based systems for embedded applications and even scaling up to high performance computing.
+    2. The Jetson Nano is different enough from a Raspberry Pi to give students exposure to other embedded systems, but similar enough that existing knowledge on the Raspberry Pi system can be transfered over. Additionally both systems run a version of linux (Jetson Nano runs Ubuntu and the Raspberry Pi can run Ubuntu or Raspian) and any learned linux knowledge can be transfered over as well.
+    3. The Jetson Nano is targeted as an embedded AI, computer vision, and high performance computing platform. 
 
 # Demonstration
 I will be demonstrating a "Smart Coffee Machine" as an example project. In the 
