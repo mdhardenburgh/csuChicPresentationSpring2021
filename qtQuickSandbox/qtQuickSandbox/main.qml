@@ -2,6 +2,8 @@ import QtQuick 2.12
 import QtQuick.Window 2.12
 import QtQuick.VirtualKeyboard 2.4
 import QtQuick.Timeline 1.0
+import QtQuick.Controls 2.15
+import QtSensors 5.9
 
 Window {
     id: window
@@ -17,14 +19,22 @@ Window {
         y: window.height
         width: window.width
 
-        states: State {
-            name: "visible"
-            when: inputPanel.active
-            PropertyChanges {
-                target: inputPanel
-                y: window.height - inputPanel.height
-            }
+        // @disable-check M16
+        //        states: State {
+        //            name: "home"
+        //            when: inputPanel.active
+        //            PropertyChanges {
+        //                target: inputPanel
+        //                y: window.height - inputPanel.height
+        //            }
+        //        }
+
+        states: State
+        {
+            name: "selectCoffeeType"
+
         }
+
         transitions: Transition {
             from: ""
             to: "visible"
@@ -55,7 +65,7 @@ Window {
     Text {
         id: placeholder
         x: 181
-        y: 330
+        y: 236
         width: 279
         height: 32
         text: qsTr("Image of the built coffee here")
@@ -66,53 +76,54 @@ Window {
 
     Grid {
         id: choiceGrid
-        x: 69
-        y: 169
-        width: 535
-        height: 118
-        transformOrigin: Item.Center
+        x: 38
+        y: 94
+        width: 565
+        height: 130
+        transformOrigin: Item.BottomLeft
         spacing: 12
         rows: 2
         columns: 3
 
-        Text {
+        Button {
             id: coffeeType
-            width: 110
-            height: 26
+            width: 194
+            height: 48
             text: qsTr("Coffee Type")
-            font.pixelSize: 21
+            font.pointSize: 25
+            highlighted: coffeeType.pressed
         }
 
-        Text {
-            id: coffeeSize
-            text: qsTr("Coffee Size")
-            font.pixelSize: 21
-            horizontalAlignment: Text.AlignHCenter
-        }
-
-        Text {
+        Button {
             id: foam
             text: qsTr("Foam")
-            font.pixelSize: 12
+            font.pointSize: 25
         }
 
-        Text {
-            id: expresso
+        Button {
+            id: expressoShots
             text: qsTr("Expresso Shots")
-            font.pixelSize: 12
+            font.pointSize: 25
         }
 
-        Text {
+        Button {
             id: hotOrIced
-            text: qsTr("hot or iced")
-            font.pixelSize: 12
+            text: qsTr("Hot or Iced")
+            font.pointSize: 25
         }
 
-        Text {
+        Button {
             id: blends
             text: qsTr("Blends")
-            font.pixelSize: 12
+            font.pointSize: 25
         }
+
+        Button {
+            id: coffeeSize
+            text: qsTr("Coffee Size")
+            font.pointSize: 25
+        }
+
     }
 
     Timeline {
@@ -131,4 +142,14 @@ Window {
         endFrame: 1000
         enabled: true
     }
+
+    Button {
+        id: brewCoffee
+        x: 271
+        y: 371
+        text: qsTr("Brew!")
+    }
+
+
+
 }
