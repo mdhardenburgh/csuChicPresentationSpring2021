@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>CoffeeOrder.qml</file>
+        <file>CoffeeTypeDialog.qml</file>
     </qresource>
 </RCC>
