@@ -10,7 +10,7 @@ ApplicationWindow {
     width: 640
     height: 480
     visible: true
-    title: qsTr("Jitters Coffee")
+    title: "Jitters Coffee"
 
     Text {
         id: welcome
@@ -18,7 +18,7 @@ ApplicationWindow {
         y: 37
         width: 353
         height: 42
-        text: qsTr("Welcome to Jitters Coffee!")
+        text: "Welcome to Jitters Coffee!"
         font.pixelSize: 29
         horizontalAlignment: Text.AlignHCenter
         minimumPixelSize: 12
@@ -32,6 +32,97 @@ ApplicationWindow {
         y: 236
         width: 279
         height: 32
+    }
+
+    Text
+    {
+        id: brewingStatus
+        x: 181
+        y: 236
+        width: 279
+        height: 32
+        text: ""
+        font.pixelSize: 29
+        state: "initial"
+        
+        states:
+        [
+            State
+            {
+                name: "initial"
+                PropertyChanges
+                {
+                    target:brewingStatus
+                    visible: false
+                }
+                
+                PropertyChanges
+                {
+                    target: coffeeOrder
+                    visible: true
+                }
+            },
+
+            State
+            {
+                name: "beginBrewing"
+                PropertyChanges
+                {
+                    target: brewingStatus
+                    text: "Starting your order!"
+                    visible: true
+                }
+                
+                PropertyChanges
+                {
+                    target: coffeeOrder
+                    visible: false
+                }
+            },
+
+            State
+            {
+                name: "gridingCoffee"
+                PropertyChanges
+                {
+                    target: brewingStatus
+                    text: "Griding coffee beans..."
+                }
+            },
+
+            State
+            {
+                name: "brewingCoffee"
+                PropertyChanges
+                {
+                    target: brewingStatus
+                    text: "Brewing your coffee..."
+                }
+            },
+
+            State
+            {
+                name: "steamingMilk"
+                PropertyChanges
+                {
+                    target: brewingStatus
+                    text: "Steaming milk..."
+                }
+            },
+
+            State
+            {
+                name: "done"
+                PropertyChanges
+                {
+                    target: brewingStatus
+                    text: "Done!!"
+                }
+            }
+        ]
+
+        SequentialAnimation
+    
     }
 
     Grid {
@@ -98,9 +189,10 @@ ApplicationWindow {
         id: brewCoffee
         x: 271
         y: 371
-        text: qsTr("Brew!")
+        text: "Brew!"
+        onClicked: brewingStatus.state = "beginBrewing"
     }
 
-
+    
 
 }
