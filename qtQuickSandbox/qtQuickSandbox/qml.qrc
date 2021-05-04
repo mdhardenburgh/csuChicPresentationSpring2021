@@ -3,5 +3,11 @@
         <file>main.qml</file>
         <file>CoffeeOrder.qml</file>
         <file>CoffeeTypeDialog.qml</file>
+        <file>FoamAmountDialog.qml</file>
+        <file>CoffeeItem.qml</file>
+        <file>EspressoShotsDialog.qml</file>
+        <file>HotOrIcedDialog.qml</file>
+        <file>BlendsDialog.qml</file>
+        <file>CoffeeSizeDialog.qml</file>
     </qresource>
 </RCC>
