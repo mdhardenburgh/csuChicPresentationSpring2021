@@ -33,8 +33,7 @@ was required.
 
 # Disclaimer
 As stated in the section titled "licensing", this software is provided    
-without any warranty. This means I am not responsible for bricking your computer 
-or causing international thermonuclear war. While I have done my best to release 
+without any warranty. This means, while I have done my best to release 
 a product that is of quality, it falls to be YOUR reseponsiblity to vet the code 
 for memory leaks, security issues and other bugs I have missed.     
 
